@@ -217,6 +217,75 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   margin-right: 10px;
 }
 
+@media (max-width: 991px) {
+  header .container .main-nav .nav:last-child .container .image-menu {
+    display: none;
+  }
+
+  header .container .main-nav .nav:last-child .container .menu {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  header .container .contnet {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .container .contnet .logo {
+    padding: 10px 0;
+  }
+
+  header .container .contnet .logo p {
+    font-size: 30px;
+  }
+
+  header .container .main-nav .nav {
+    padding: 10px 10px 20px 10px;
+  }
+
+  header .container .main-nav .nav::before {
+    height: 1.5px;
+  }
+
+  header .container .main-nav .nav .nav-links {
+    font-size: 15px;
+  }
+
+  header .container .main-nav .nav:last-child .container {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 300.28px;
+  }
+
+  header .container .main-nav .nav:last-child:hover .container {
+    top: 48px;
+  }
+
+  header .main-nav .nav:last-child .container img {
+    display: none;
+  }
+
+  header .container .main-nav .nav:last-child .container .menu {
+    flex-basis: 100%;
+  }
+
+  header .container .main-nav .nav:last-child .container {
+    padding: 0;
+  }
+
+  header .container .main-nav .nav:last-child .menu {
+    flex-direction: column;
+  }
+
+  header .container .main-nav .nav:last-child .container .menu .cards {
+    width: 100%;
+    border-bottom: 1px solid #d8d7d7;
+  }
+}
+
 /* end header */
 
 /* ----------------------------------------------------------------------------------- */
@@ -282,6 +351,8 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 .landing .container .image {
   height: 100%;
 }
+
+
 .landing .container .image .landing-img {
   width: 600px;
   position: relative;
@@ -289,6 +360,7 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   right: -30px;
   animation: move-img linear 2s infinite alternate;
 }
+
 
 @keyframes move-img {
   from {
@@ -330,6 +402,37 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   }
   100% {
     bottom: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .landing .container .image {
+    display: none;
+  }
+
+  .landing .container .text h3, 
+  .landing .container .text p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .landing {
+    height: calc(100vh - 102px);
+  }
+
+  .landing .container .text p {
+    font-size: 18px;
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .landing .container .text h3 span {
+    font-size: 40px;
+  }
+
+  .landing .container .text h3 {
+    font-size: 35px;
   }
 }
 
