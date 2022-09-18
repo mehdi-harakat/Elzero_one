@@ -66,6 +66,7 @@ html {
 
 header {
   background-color: #fff;
+  box-shadow: 0px -4px 13px -2px black;
   z-index: 5000;
 }
 
@@ -80,7 +81,7 @@ header .container .contnet .logo {
 }
 
 header .container .contnet .logo p {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 900;
   color: var(--para-color);
 }
@@ -159,8 +160,7 @@ header .container .main-nav .nav:last-child .container {
 }
 
 header .container .main-nav .nav:last-child:hover .container {
-  /* display: flex; */
-  top: 82px;
+  top: 78px;
   opacity: 1;
   pointer-events: painted;
 }
@@ -256,8 +256,8 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   header .container .main-nav .nav:last-child .container {
     position: absolute;
     top: 60px;
-    right: 0;
-    width: 300.28px;
+    right: -36.05px;
+    width: 372.38px;
   }
 
   header .container .main-nav .nav:last-child:hover .container {
@@ -283,6 +283,19 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   header .container .main-nav .nav:last-child .container .menu .cards {
     width: 100%;
     border-bottom: 1px solid #d8d7d7;
+  }
+}
+
+@media (max-width: 500px) {
+  header .container .main-nav .nav:last-child .container {
+    position: absolute;
+    top: 60px;
+    right: -36.05px;
+    width: 300.27px;
+  }
+
+  header .container .main-nav .nav:last-child:hover .container {
+    top: 45px;
   }
 }
 
@@ -436,4 +449,148 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   }
 }
 
+@media (max-width: 500px) {
+  header .container .main-nav .nav {
+    padding: 10px 6px 20px 6px;
+  }
+  header .container .main-nav .nav .nav-links {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  header .container .main-nav .nav:last-child .container .menu {
+    padding-left: 25px;
+  }
+}
+
 /* end landing */
+
+/* --------------------------------------------------------------------------------------------- */
+
+/* start compenent */
+
+.compenent{
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.compenent h3 {
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: fit-content;
+  border: 2px solid black;
+  margin: 0 auto;
+  padding: 10px 20px;
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+}
+
+.compenent h3:hover {
+  transition-delay: 0.6s;
+  color: white;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.compenent h3::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #1787e0;
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.compenent h3::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #1787e0;
+  border-radius: 50%;
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.compenent h3:hover::before {
+  animation: motion-before 0.6s ease-in-out 1 normal;
+  animation-fill-mode: forwards;
+}
+
+.compenent h3:hover::after {
+  animation: motion-after 0.6s ease-in-out 1 normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes motion-before {
+  0% {
+    width: 15px;
+    height: 15px;
+    left: -30px;
+    top: 50%;
+    border-radius: 50%;
+  }
+  40% {
+    width: 15px;
+    height: 15px;
+    left: 0;
+    top: 50%;
+    border-radius: 50%;
+  }
+  100% {
+    left: 0;
+    width: 50%;
+    height: 100%;
+    top: 50%;
+    border-radius: 0;
+  }
+}
+
+@keyframes motion-after {
+  0% {
+    width: 15px;
+    height: 15px;
+    right: -30px;
+    top: 50%;
+    border-radius: 50%;
+  }
+  40% {
+    width: 15px;
+    height: 15px;
+    right: 0;
+    top: 50%;
+    border-radius: 50%;
+  }
+  100% {
+    right: 0;
+    width: 50%;
+    height: 100%;
+    top: 50%;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .compenent h3 {
+    font-size: 25px;
+    padding: 5px 10px;
+  }
+}
+
+
+/* end compenent */
+
+/* ------------------------------------------------------------------------------------ */
+
+/* start articles */
+
+
+
+/* end articles */
