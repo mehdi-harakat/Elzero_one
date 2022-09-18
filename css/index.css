@@ -545,7 +545,7 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   }
   100% {
     left: 0;
-    width: 50%;
+    width: 55%;
     height: 100%;
     top: 50%;
     border-radius: 0;
@@ -569,7 +569,7 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   }
   100% {
     right: 0;
-    width: 50%;
+    width: 55%;
     height: 100%;
     top: 50%;
     border-radius: 0;
