@@ -484,10 +484,11 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   cursor: pointer;
   transition-duration: 0.5s;
   transition-timing-function: ease;
+  z-index: 2;
 }
 
 .compenent h3:hover {
-  transition-delay: 0.6s;
+  transition-delay: 0.4s;
   color: white;
   border: 2px solid rgba(0, 0, 0, 0);
 }
@@ -584,6 +585,23 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 }
 
 
+.spikes {
+}
+
+.spikes::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 30px;
+  /* background-color: red; */
+  background-image: linear-gradient(135deg , white 25%, transparent 25%),
+    linear-gradient(225deg, white 25%, transparent 25%);
+  background-size: 50px 50px;
+}
+
+
 /* end compenent */
 
 /* ------------------------------------------------------------------------------------ */
@@ -620,7 +638,6 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   .articles .holder {
     grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
     justify-content: center;
-    /* gap: 50px; */
   }
 }
 
@@ -637,10 +654,6 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 .articles .holder .card:hover {
   transform: translate(0, -15px);
   box-shadow: 0px 6px 15px -4px black;
-}
-
-.articles .holder .card .image {
-
 }
 
 .articles .holder .card .image img {
@@ -698,6 +711,76 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   }
 }
 
-
-
 /* end articles */
+
+/* ---------------------------------------------------------------------------------- */
+
+/* start gallery */
+
+.gallery {
+  background-color: var(--section-background);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  position: relative;
+}
+
+.gallery .container .photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 70px;
+  padding: 20px;
+}
+
+.gallery .container .photos .images{
+  position: relative;
+  border: 15px solid #ffffff;
+  overflow: hidden;
+}
+
+.gallery .container .photos .images::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0%;
+  height: 0%;
+  z-index: 2;
+  background-color: #ffffff9d;
+}
+
+.gallery .container .photos .images:hover::before {
+  animation: flash var(--second-transition) ease normal ;
+}
+
+@keyframes flash {
+  0% {
+  width: 0%;
+  height: 0%;
+  opacity: 1;
+  }
+
+  100% {
+  width: 150%;
+  height: 150%;
+  opacity: 0;
+  }
+}
+
+.gallery .container .photos img {
+  max-width: 100%;
+  height: 104%;
+  transition: all var(--second-transition) ease;
+}
+
+.gallery .container .photos .images:hover > img {
+  transform: rotate(6deg) scale(1.2);
+}
+
+@media (max-width: 300px) {
+  .gallery .container .photos {
+    padding: 0;
+  }
+}
+
+/* end gallery */
