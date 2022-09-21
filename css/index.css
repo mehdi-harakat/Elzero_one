@@ -8,6 +8,9 @@
   --main-padding-bottom: 100px;
   --main-transition: 0.3s;
   --second-transition: 0.5s;
+  --padding-top: 80px;
+  --padding-bottom: 80px;
+
 }
 /* end variables */
 
@@ -585,8 +588,10 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 }
 
 
-.spikes {
-}
+/* this is Spikes -------------------------------- */
+
+
+
 
 .spikes::before {
   content: '';
@@ -595,10 +600,9 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   left: 0%;
   width: 100%;
   height: 30px;
-  /* background-color: red; */
   background-image: linear-gradient(135deg , white 25%, transparent 25%),
     linear-gradient(225deg, white 25%, transparent 25%);
-  background-size: 50px 50px;
+  background-size: 35px 35px;
 }
 
 
@@ -609,15 +613,15 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 /* start articles */
 
 .articles {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
 }
 
 .articles .holder {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
-  padding: 0 80px 80px;
+  padding: 0 15px 80px;
 }
 
 @media (max-width: 991px) {
@@ -649,6 +653,7 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   box-shadow: 0px 3px 8px -4px black;
   transform: translate(0);
   transition: all var(--main-transition) ease;
+  background-color: white;
 }
 
 .articles .holder .card:hover {
@@ -719,8 +724,8 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 
 .gallery {
   background-color: var(--section-background);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
   position: relative;
 }
 
@@ -784,3 +789,171 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 }
 
 /* end gallery */
+
+/* ----------------------------------------------------------------------------------------- */
+
+/* start features */
+.features {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+
+.features .feat-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.features .feat-content .feat-card {
+  border: 1px solid #ccc;
+  align-items: center;
+  background-color: white;
+}
+
+
+
+.features .feat-content .feat-image img {
+  max-width: 100%;
+}
+
+.features .feat-content .feat-image {
+  max-width: 100%;
+  position: relative;
+}
+
+.features .feat-content .feat-card .feat-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.features .feat-content .card-one .feat-image::before {
+  background-color: hsla(3, 90%, 58%, 0.60);
+}
+.features .feat-content .card-two .feat-image::before {
+  background-color: hsla(174, 100%, 29%, 0.60);
+}
+.features .feat-content .card-three .feat-image::before {
+  background-color:  hsla(199, 98%, 48%, 0.60);
+}
+
+
+.features .feat-content .feat-card .feat-image::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  background-color: white;
+  clip-path: polygon(-10% 100%, 105% 40%, 100% 105%);
+  z-index: 2;
+  transition: all var(--second-transition) ease;
+}
+
+.features .feat-content .feat-card:hover .feat-image::after {
+  clip-path: polygon(0% 100%, 0% 40%, 105% 101%);
+}
+
+
+
+.features .feat-content .feat-text .feat-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.features .feat-content .feat-text .feat-title h2 {
+  width: fit-content;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.features .feat-content .feat-text .feat-title h2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 6px;
+  background-color: #333;
+}
+
+
+.features .feat-content .card-one .feat-text .feat-title h2::before {
+  background-color: #f44036;
+}
+.features .feat-content .card-two .feat-text .feat-title h2::before {
+  background-color: #009688;
+}
+.features .feat-content .card-three .feat-text .feat-title h2::before {
+  background-color: #03a9f4;
+}
+
+
+.features .feat-content .feat-text p {
+  font-size: 20px;
+  color: var(--para-color);
+  line-height: 1.6;
+  text-align: center;
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-bottom: 40px;
+}
+
+.features .feat-content .feat-text span {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.features .feat-content .feat-card .feat-text span a {
+  border-radius: 8px;
+  padding: 10px 25px;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all var(--second-transition) ease;
+}
+
+.features .feat-content .card-one .feat-text span a {
+  color: #f44036;
+  border: 3px solid #f44036;
+}
+.features .feat-content .card-two .feat-text span a {
+  color: #009688;
+  border: 3px solid #009688;
+}
+.features .feat-content .card-three .feat-text span a {
+  color: #03a9f4;
+  border: 3px solid #03a9f4;
+}
+
+.features .feat-content .card-one:hover .feat-text span a {
+  color: white;
+  background-color: #f44036;
+  border: 3px solid #f43f3600;
+}
+.features .feat-content .card-two:hover .feat-text span a {
+  color: white;
+  background-color: #009688;
+  border: 3px solid #00968700;
+}
+.features .feat-content .card-three:hover .feat-text span a {
+  color: white;
+  background-color: #03a9f4;
+  border: 3px solid #03a8f400;
+}
+/* end features */
