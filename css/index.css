@@ -847,7 +847,7 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -5px;
   width: 100%;
   height: 70%;
   background-color: white;
