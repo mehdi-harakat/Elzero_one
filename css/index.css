@@ -336,9 +336,14 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 }
 
 .landing .container .text {
-  height: 100%;
-  padding-top: 100px;
+    height: 100%;
+    /* padding-top: 100px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+
 
 .landing .container .text h3 {
   font-size: 35px;
@@ -366,6 +371,7 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 
 .landing .container .image {
   height: 100%;
+  display: contents;
 }
 
 
@@ -844,7 +850,7 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 
 
 .features .feat-content .feat-card .feat-image::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -5px;
