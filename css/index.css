@@ -1055,19 +1055,6 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   display: inline-block;
 }
 
-/* .testimonials .container .test-box .test-icons i:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.testimonials .container .test-box .test-icons i:nth-child(3) {
-  animation-delay: 0.6s;
-}
-.testimonials .container .test-box .test-icons i:nth-child(4) {
-  animation-delay: 0.9s;
-}
-.testimonials .container .test-box .test-icons i:nth-child(5) {
-  animation-delay: 0.12s;
-} */
-
 
 @keyframes star-move {
   0% {
@@ -1080,3 +1067,120 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 }
 
 /* End Testimonials */
+
+/* --------------------------------------------------------------------------------------- */
+
+/* Start Team Members */
+.team {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+
+.team .team-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+}
+
+.team .team-box .team-card {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  overflow: hidden;
+  border-radius: 15px;
+  position: relative;
+}
+
+.team .team-box .team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 70px;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f3f3;
+  border-radius: 15px;
+  z-index: -2;
+}
+.team .team-box .team-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: #e4e4e4;
+  border-radius: 15px;
+  z-index: -1;
+  transition: all var(--main-transition) ease;
+}
+
+.team .team-box .team-card:hover::after {
+  width: calc(100% - 70px);
+}
+
+.team .team-box .team-card .team-holder {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.team .team-box .team-card img{
+  max-width: 85%;
+  border-radius: 16px;
+  filter: grayscale(0);
+  transition: all var(--second-transition) ease;
+}
+
+.team .team-box .team-card:hover img {
+  filter: grayscale(1);
+}
+
+.team .team-box .team-card .team-holder .team-icons {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.team .team-box .team-card .team-holder .team-icons i {
+  font-size: 18px;
+  color: #777;
+  cursor: pointer;
+  transition: all var(--main-transition) ease;
+}
+
+.team .team-box .team-card .team-holder .team-icons i:hover {
+  color: var(--main-color-hover);
+}
+
+.team .team-box .team-card .team-text {
+  padding-left: 90px;
+  margin-bottom: 20px;
+  filter: grayscale(0);
+  transition: all var(--second-transition) ease;
+}
+
+.team .team-box .team-card:hover .team-text {
+  filter: grayscale(1);
+}
+
+
+.team .team-box .team-card .team-text h3 {
+  text-transform: capitalize;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--main-color);
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* End Team Members */
