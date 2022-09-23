@@ -656,15 +656,15 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   flex-direction: column;
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0px 3px 8px -4px black;
+  box-shadow: 0px 3px 14px -9px black;
   transform: translate(0);
   transition: all var(--main-transition) ease;
   background-color: white;
 }
 
 .articles .holder .card:hover {
-  transform: translate(0, -15px);
-  box-shadow: 0px 6px 15px -4px black;
+  transform: translate(0, -10px);
+  box-shadow: 0px 6px 18px -10px black;
 }
 
 .articles .holder .card .image img {
@@ -964,6 +964,8 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 }
 /* end features */
 
+/* ---------------------------------------------------------------------------------------- */
+
 /* Start Testimonials */
 .testimonials {
   padding-top: var(--main-padding-top);
@@ -1175,12 +1177,110 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   margin-bottom: 10px;
 }
 
-
-
-
-
-
-
-
-
 /* End Team Members */
+
+/* ------------------------------------------------------------------------------------------- */
+
+/* start services */
+.services {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+  background-color: var(--section-background);
+  position: relative;
+}
+
+.services .serv-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.services .serv-boxes .serv-card {
+  background-color: white;
+  padding-top: 45px;
+  counter-increment: count-cards;
+  position: relative;
+  box-shadow: 
+    0 12px 20px 0 rgb(0 0 0 / 13%),
+    0 2px 4px 0 rgb(0 0 0 / 12%);
+  transition: all var(--main-transition) ease;
+}
+
+.services .serv-boxes .serv-card:hover {
+  transform: translateY(-6px);
+}
+
+.services .serv-boxes .serv-card::before {
+  content: "";
+  background-color: var(--main-color);
+  width: 0;
+  height: 3px;
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--main-transition);
+}
+
+.services .serv-boxes .serv-card:hover::before {
+  width: 100%;
+}
+
+.services .serv-boxes .serv-card i {
+  color: #d5d5d5;
+  font-size: 60px;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.services .serv-boxes .serv-card h2 {
+  text-align: center;
+  font-size: 22px;
+  text-transform: capitalize;
+  color: var(--main-color);
+  margin-bottom: 30px;
+}
+
+.services .serv-boxes .serv-card .text-hold {
+  padding: 15px;
+  background-color: #f9f9f9;
+  text-align: right;
+  position: relative;
+}
+
+.services .serv-boxes .serv-card .text-hold::before {
+  content: '0'counter(count-cards);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  width: 80px;
+  height: 100%;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 10px;
+}
+
+.services .serv-boxes .serv-card .text-hold::after {
+  content: "";
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 78px;
+  background-color: rgb(213, 213, 213);
+  transform: skew(-20deg);
+}
+
+.services .serv-boxes .serv-card .text-hold p {
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-size: 17px;
+}
+
+/* end services */
