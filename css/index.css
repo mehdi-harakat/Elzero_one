@@ -1284,3 +1284,91 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 }
 
 /* end services */
+
+/* ------------------------------------------------------------------------------ */
+
+/* start our skills */
+.skills {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+  position: relative;
+}
+
+.skills .skills-container {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .skills .skills-container img {
+    display: none;
+  }
+}
+
+.skills .skills-holder {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.skills .skills-holder .skills-list .count-list {
+  background-color: #d5d5d5;
+  position: relative;
+}
+
+.skills .skills-holder .skills-list {
+  margin-bottom: 25px;
+}
+
+.skills .skills-holder .skills-list .count-list::before {
+  content: attr(data-count);
+  color: var(--main-color);
+  font-size: 12px;
+  position: absolute;
+  top: -34px;
+  right: 0px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.skills .skills-holder .skills-list p {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.skills .skills-holder .skills-list .count-list .main-list {
+  background-color: var(--main-color);
+  height: 30px;
+}
+
+
+.skills .skills-holder .skills-list:first-child .main-list {
+  width: 65%;
+}
+.skills .skills-holder .skills-list:nth-child(2) .main-list {
+  width: 95%;
+}
+.skills .skills-holder .skills-list:nth-child(3) .main-list {
+  width: 86%;
+}
+.skills .skills-holder .skills-list:last-child .main-list {
+  width: 90%;
+}
+
+
+/* end our skills */
+
+/* -------------------------------------------------------------------------------------------- */
+
+/* start how it works */
+.work {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+  background-color: var(--section-background);
+  position: relative;
+}
+
+/* end how it works */
