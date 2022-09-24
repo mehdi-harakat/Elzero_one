@@ -1371,4 +1371,95 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   position: relative;
 }
 
+.work .work-hold {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+}
+
+.work .work-hold .work-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.work .work-hold .work-boxes .work-card {
+  display: flex;
+  gap: 30px;
+  background-color: #f6f5f5;
+  padding: 30px;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 6px;
+  position: relative;
+}
+
+.work .work-hold .work-boxes .work-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--section-background);
+  width: 0;
+  height: 0;
+  z-index: 1;
+  transition: all var(--main-transition);
+}
+
+.work .work-hold .work-boxes .work-card:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.work .work-hold .work-boxes .work-card .work-text {
+  z-index: 2;
+}
+
+.work .work-hold .work-boxes .work-card h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.work .work-hold .work-boxes .work-card p {
+  font-size: 18px;
+  color: var(--para-color);
+  line-height: 1.6;
+}
+
+.work .work-hold > img {
+  width: 50%;
+}
+.work .work-hold .work-card img {
+  width: 64px;
+  height: 64px;
+  z-index: 2;
+}
+
+@media (max-width: 991px) {
+  .work .work-hold > img {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .work .work-hold .work-boxes .work-card {
+    flex-direction: column;
+  }
+  .work .work-hold .work-boxes .work-card h3,
+  .work .work-hold .work-boxes .work-card p {
+    text-align: center;
+  }
+}
+
 /* end how it works */
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+
+/* start events */
+.events {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+
+/* end events */
