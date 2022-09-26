@@ -2292,6 +2292,7 @@ footer .footer-holder .footer-info i {
 footer .footer-holder .footer-info .info .hold {
   color: #b9b9b9;
   line-height: 1.8;
+  text-transform: capitalize;
 }
 
 footer .footer-holder .footer-gallery .photos {
