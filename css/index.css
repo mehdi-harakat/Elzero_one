@@ -167,6 +167,15 @@ header .container .main-nav .nav:last-child .container {
   pointer-events: painted;
 } */
 
+/* ---------------------------------- FOR HIDE AND SHOW NAV BY JAVASCRIPT --------------------------------*/
+
+header .container .main-nav .nav:last-child .helloHello {
+  top: 78px;
+  opacity: 1;
+  pointer-events: painted;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------- */
 
 
 
