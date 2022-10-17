@@ -161,11 +161,14 @@ header .container .main-nav .nav:last-child .container {
   pointer-events: none;
 }
 
-header .container .main-nav .nav:last-child:hover .container {
+/* header .container .main-nav .nav:last-child:hover .container {
   top: 78px;
   opacity: 1;
   pointer-events: painted;
-}
+} */
+
+
+
 
 header .container .main-nav .nav:last-child .container .image-menu img {
   width: 90%;
