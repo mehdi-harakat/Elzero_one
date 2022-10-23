@@ -1,16 +1,17 @@
-let myElem = document.getElementById( "valHala" );
-let myNav = document.getElementById( "navMenu" );
+let myElem = document.getElementById("valHala");
+let myNav = document.getElementById("navMenu");
 
 // -----------------------------------------------------------FIRST WAY-----------------------------------------------
 
-myElem.addEventListener( "focus", function () {
-  myNav.classList.toggle( 'helloHello' );
-}, true );
+myElem.addEventListener("click", () => {
+  myNav.classList.toggle( "helloHello" );
+},true);
 
-myElem.addEventListener( "blur", function () {
-  myNav.classList.remove( 'helloHello' );
-}, true );
-
+myElem.addEventListener("blur", () => {
+  setTimeout( function () {
+  myNav.classList.remove( "helloHello" );
+  }, 100)
+},true);
 
 // -----------------------------------------------------------SECOND WAY-----------------------------------------------
 
