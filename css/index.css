@@ -1311,8 +1311,7 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   margin-bottom: 25px;
 }
 
-.skills .skills-holder .skills-list .count-list::before {
-  content: attr(data-count);
+.skills .skills-holder .skills-list .count-list .newCounter {
   color: var(--main-color);
   font-size: 12px;
   position: absolute;
@@ -1324,8 +1323,8 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 }
 
 .skills .skills-holder .skills-list p {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 10px;
 }
@@ -1333,19 +1332,8 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 .skills .skills-holder .skills-list .count-list .main-list {
   background-color: var(--main-color);
   height: 30px;
-}
-
-.skills .skills-holder .skills-list:first-child .main-list {
-  width: 65%;
-}
-.skills .skills-holder .skills-list:nth-child(2) .main-list {
-  width: 95%;
-}
-.skills .skills-holder .skills-list:nth-child(3) .main-list {
-  width: 86%;
-}
-.skills .skills-holder .skills-list:last-child .main-list {
-  width: 90%;
+  width: 0;
+  transition: all 1s ease-in-out;
 }
 
 /* end our skills */

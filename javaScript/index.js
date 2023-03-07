@@ -1,57 +1,52 @@
 let myElem = document.getElementById("valHala");
 let myNav = document.getElementById("navMenu");
 
-// -----------------------------------------------------------FIRST WAY-----------------------------------------------
+// ----------------------------------------------------------- Start The Burgler Nav -----------------------------------------------
 
 myElem.addEventListener("click", () => {
-  myNav.classList.toggle( "helloHello" );
+    myNav.classList.toggle( "helloHello" );
 },true);
 
 myElem.addEventListener("blur", () => {
   setTimeout( function () {
-  myNav.classList.remove( "helloHello" );
+    myNav.classList.remove( "helloHello" );
   }, 100)
 },true);
 
-// -----------------------------------------------------------SECOND WAY-----------------------------------------------
+// --------------------------------------------------------- End The Burgler Nav -------------------------
 
-// myElem.addEventListener("focus", myFocus, true);
-// myElem.addEventListener("blur", myBlur, true);
 
-// function myFocus() {
-//   document.querySelector(
-//     "header .container .main-nav .nav:last-child .container"
-//   ).style.cssText = "top: 78px; opacity: 1; pointer-events:painted";
-// }
+let container = document.getElementById("skills");
+let one = document.querySelectorAll(".main-list");
+let hello = document.querySelectorAll(".newCounter");
+let trust = false;
 
-// function myBlur() {
-//   document.querySelector(
-//     "header .container .main-nav .nav:last-child .container"
-//   ).style.cssText = "top: 100px; opacity: 0; pointer-events:none";
-// }
+window.onscroll = function () {
+  if (window.scrollY >= container.offsetTop - 300) {
+    one.forEach(function (elem) {
+      containerAll(elem);
+    });
 
-// -----------------------------------------------------------THIRD WAY-------------------------------------------------
+    if (!trust) {
+      hello.forEach((el) => {
+        helloCounter(el);
+      });
+      trust = true;
+    }
+  }
+};
 
-// myElem.addEventListener("focus", myFocus, true);
-// myElem.addEventListener("blur", myBlur, true);
+function containerAll(test) {
+  let targetting = test.parentElement.dataset.couter;
+  test.style.width = targetting;
+}
 
-// function myFocus() {
-//   myNav.classList.toggle( 'helloHello' );
-// }
-
-// function myBlur() {
-//   myNav.classList.remove( 'helloHello' );
-// }
-
-// -----------------------------------------------------------FOURTH WAY------------------------------------------------
-
-// myElem.onclick = function () {
-//   myNav.classList.toggle( 'helloHello' );
-// }
-
-// myElem.addEventListener( "blur", myBlur, true );
-
-// function myBlur() {
-//   myNav.classList.remove( 'helloHello' );
-//   console.log( 'Hello' );
-// };
+function helloCounter(test) {
+  let targetting = test.parentElement.dataset.couter;
+  let mi = setInterval(() => {
+    test.textContent = `${parseInt(test.textContent) + 1}%`;
+    if (test.textContent === targetting) {
+      clearInterval(mi);
+    }
+  }, 1000 / parseInt(targetting));
+}
