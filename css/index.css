@@ -2040,14 +2040,35 @@ html {
   padding: 10px;
 }
 
-.top-video .top-holder .image-content img {
-  display: none;
-  width: 100%;
+.top-video .top-holder .image-content .catching {
+  overflow: hidden;
+  background-color: #333;
 }
 
+.top-video .top-holder .image-content img {
+  width: 100%;
+  display: none;
+}
+
+/* --------------------------------------- this class for image event--------------------------------------*/
 .top-video .top-holder .image-content .imgVisible {
   display: block;
+  animation: opacityEvent 0.4s ease-in-out both;
 }
+
+@keyframes opacityEvent {
+  from{
+    transform: scale(1.5) rotate(-12deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform:scale(1) rotate(0deg) ;
+    /* transform: rotate(0); */
+  }
+}
+/* --------------------------------------------------- End ------------------------------------------------ */
+
 
 .top-video .top-holder .image-content p {
   padding: 20px;
