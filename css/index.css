@@ -1755,7 +1755,201 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 
 /* ------------------------------------------------------------------------------------ */
 
+
+/* start variables */
+:root {
+  --main-color: #2196f3;
+  --main-color-hover: #2b89d6;
+  --para-color: #777;
+  --section-background: #ececec;
+  --main-padding-top: 100px;
+  --main-padding-bottom: 100px;
+  --main-transition: 0.3s;
+  --second-transition: 0.5s;
+  --padding-top: 80px;
+  --padding-bottom: 80px;
+}
+/* end variables */
+
+/* ----------------------------------------------------------------------------- */
+
+/* start global rules */
+
+* {
+  font-family: "Cairo", sans-serif;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* small screen */
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* medium screen */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* larg screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1350px;
+  }
+}
+
+/* end global rules */
+
+/* --------------------------------------------------------------- */
+
+/* start compenent */
+
+.compenent {
+  padding-bottom: 100px;
+}
+
+.compenent h3 {
+  font-size: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: fit-content;
+  border: 2px solid black;
+  margin: 0 auto;
+  padding: 10px 20px;
+  position: relative;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
+  z-index: 2;
+}
+
+.compenent h3:hover {
+  transition-delay: 0.4s;
+  color: white;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+
+.compenent h3::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #1787e0;
+  border-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.compenent h3::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #1787e0;
+  border-radius: 50%;
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.compenent h3:hover::before {
+  animation: motion-before 0.6s ease-in-out 1 normal;
+  animation-fill-mode: forwards;
+}
+
+.compenent h3:hover::after {
+  animation: motion-after 0.6s ease-in-out 1 normal;
+  animation-fill-mode: forwards;
+}
+
+@keyframes motion-before {
+  0% {
+    width: 15px;
+    height: 15px;
+    left: -30px;
+    top: 50%;
+    border-radius: 50%;
+  }
+  40% {
+    width: 15px;
+    height: 15px;
+    left: 0;
+    top: 50%;
+    border-radius: 50%;
+  }
+  100% {
+    left: 0;
+    width: 55%;
+    height: 100%;
+    top: 50%;
+    border-radius: 0;
+  }
+}
+
+@keyframes motion-after {
+  0% {
+    width: 15px;
+    height: 15px;
+    right: -30px;
+    top: 50%;
+    border-radius: 50%;
+  }
+  40% {
+    width: 15px;
+    height: 15px;
+    right: 0;
+    top: 50%;
+    border-radius: 50%;
+  }
+  100% {
+    right: 0;
+    width: 55%;
+    height: 100%;
+    top: 50%;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .compenent {
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .compenent h3 {
+    font-size: 25px;
+    padding: 5px 10px;
+  }
+}
+
+/* this is Spikes -------------------------------------------------------------------------------- */
+
 /* start top video  */
+
 .top-video {
   padding-top: var(--padding-top);
   padding-bottom: var(--padding-bottom);
@@ -1769,7 +1963,7 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 .top-video .top-holder .text-content {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 50%;
 }
 
 .top-video .top-holder .text-content .top-videos-icons {
@@ -1805,12 +1999,29 @@ header .container .main-nav .nav:last-child .menu .cards li i {
   background-color: #f5f5f5;
 }
 
+/*-------------------------------- this for make fix hover in content was clicked */
+.top-video .top-holder .text-content .holder-info .hoverThing {
+  background-color: #f5f5f5;
+  transition: all var(--main-transition) ease-in-out;
+}
+/* ---------------------------------------------------------------------------------*/
+
+
 .top-video .top-holder .video-info p:first-child {
   margin-bottom: 10px;
   font-size: 16px;
   font-weight: 600;
   transition: all var(--main-transition);
 }
+
+
+/*-------------------------------- this for make fix hover in paragraph was clicked */
+.top-video .top-holder .video-info .paraEvent {
+  color: var(--main-color-hover);
+}
+/* ---------------------------------------------------------------------------------*/
+
+
 
 .top-video .top-holder .video-info:hover p:first-child {
   color: var(--main-color-hover);
@@ -1830,7 +2041,12 @@ header .container .main-nav .nav:last-child .menu .cards li i {
 }
 
 .top-video .top-holder .image-content img {
+  display: none;
   width: 100%;
+}
+
+.top-video .top-holder .image-content .imgVisible {
+  display: block;
 }
 
 .top-video .top-holder .image-content p {

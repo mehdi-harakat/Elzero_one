@@ -57,7 +57,7 @@ function helloCounter(test) {
     if (test.textContent === targetting) {
       clearInterval(mi);
     }
-  }, 3000 / targetting);
+  }, 1000 / parseInt(targetting));
 }
 
 // --------------------------------------------------------- End The Scroll Function ---------------------------------------------
@@ -78,7 +78,7 @@ window.addEventListener("scroll", function () {
           if (valueTotal === elem.textContent) {
             clearInterval(setinter);
           }
-        }, 1500 / valueTotal);
+        }, 1000 / parseInt(valueTotal) );
       });
     }
     startTow = true;
@@ -120,3 +120,66 @@ const counter = setInterval(() => {
     clearInterval(counter);
   }
 }, 1000);
+
+// ---------------------------------------------- End Counter ---------------------------------
+
+
+// ---------------------------------------------- Start Top Videos ----------------------------
+
+let divKeys = document.querySelectorAll(".top-video .video-info");
+let divValue = document.querySelectorAll(".top-video .image-content img");
+
+// this for on the reload page
+window.addEventListener("load", (e) => {
+  gamesEventsOnload(e);
+});
+
+// this event for click elements
+window.addEventListener("click", (e) => {
+  gamesEvents(e);
+});
+
+// this is the main function to click
+function gamesEvents(test) {
+  if (test.target.hasAttribute("data-key")) {
+    let attr = test.target.getAttribute("data-key");
+
+    //trager fucntion reloading
+    gamesEventsOnload(attr);
+  }
+}
+
+// and this function for reloading and also we trager it in the main function for click
+function gamesEventsOnload(value) {
+  // this loop for the photos
+  divValue.forEach((elem) => {
+    elem.classList.remove("imgVisible");
+    if (elem.getAttribute("data-value") === value) {
+      elem.classList.add("imgVisible");
+    } else {
+      if (divValue[0].getAttribute("class") === "imgVisible") {
+        divValue[0].classList.remove("imgVisible");
+      } else {
+        divValue[0].classList.add("imgVisible");
+      }
+    }
+  });
+
+  // this loop for the elements
+  divKeys.forEach((ele) => {
+    ele.classList.remove("hoverThing");
+    ele.firstElementChild.classList.remove("paraEvent");
+    if (ele.getAttribute("data-key") === value) {
+      ele.classList.add("hoverThing");
+      ele.firstElementChild.classList.add("paraEvent");
+    } else {
+      if (divKeys[0].getAttribute("class") !== "video-info hoverThing") {
+        divKeys[0].classList.add("hoverThing");
+        divKeys[0].firstElementChild.classList.add("paraEvent");
+      } else {
+        divKeys[0].classList.remove("hoverThing");
+        divKeys[0].firstElementChild.classList.remove("paraEvent");
+      }
+    }
+  });
+}
