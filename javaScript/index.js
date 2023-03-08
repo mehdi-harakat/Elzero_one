@@ -3,25 +3,35 @@ let myNav = document.getElementById("navMenu");
 
 // ----------------------------------------------------------- Start The Burgler Nav -----------------------------------------------
 
-myElem.addEventListener("click", () => {
-    myNav.classList.toggle( "helloHello" );
-},true);
+myElem.addEventListener(
+  "click",
+  () => {
+    myNav.classList.toggle("helloHello");
+  },
+  true
+);
 
-myElem.addEventListener("blur", () => {
-  setTimeout( function () {
-    myNav.classList.remove( "helloHello" );
-  }, 100)
-},true);
+myElem.addEventListener(
+  "blur",
+  () => {
+    setTimeout(function () {
+      myNav.classList.remove("helloHello");
+    }, 100);
+  },
+  true
+);
 
-// --------------------------------------------------------- End The Burgler Nav -------------------------
+// --------------------------------------------------------- End The Burgler Nav ---------------------------------------------------
 
+// --------------------------------------------------------- Start The Scroll Function ---------------------------------------------
 
 let container = document.getElementById("skills");
 let one = document.querySelectorAll(".main-list");
 let hello = document.querySelectorAll(".newCounter");
 let trust = false;
 
-window.onscroll = function () {
+
+window.addEventListener('scroll', function() {
   if (window.scrollY >= container.offsetTop - 300) {
     one.forEach(function (elem) {
       containerAll(elem);
@@ -34,7 +44,7 @@ window.onscroll = function () {
       trust = true;
     }
   }
-};
+})
 
 function containerAll(test) {
   let targetting = test.parentElement.dataset.couter;
@@ -48,5 +58,31 @@ function helloCounter(test) {
     if (test.textContent === targetting) {
       clearInterval(mi);
     }
-  }, 1000 / parseInt(targetting));
+  }, 3000 / targetting);
 }
+
+
+// --------------------------------------------------------- End The Scroll Function ---------------------------------------------
+
+// --------------------------------------------------------- Start The Function For Our Stats Section ---------------------------
+
+let ourStats = document.querySelector(".our-stats");
+let elementH = document.querySelectorAll(".our-stats .counting");
+let startTow = false;
+
+window.addEventListener('scroll', function() {
+  if (window.scrollY >= ourStats.offsetTop - 400) {
+    if (!startTow) {
+      elementH.forEach((elem) => {
+        let valueTotal = elem.getAttribute("data-value");
+        let setinter = setInterval(() => {
+          elem.textContent++;
+          if (valueTotal === elem.textContent) {
+            clearInterval(setinter);
+          }
+        }, 1500 / valueTotal);
+      });
+    }
+    startTow = true;
+  }
+})
