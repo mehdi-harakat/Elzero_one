@@ -91,7 +91,7 @@ let days = document.querySelector(".days");
 let hours = document.querySelector(".hours");
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
-const dateStart = new Date("Apr 30, 2023 23:59:59");
+const dateStart = new Date("oct 30, 2023 23:59:59");
 
 const counter = setInterval(() => {
   const dateNow = new Date().getTime();
